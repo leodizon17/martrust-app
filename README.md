@@ -16,7 +16,7 @@ Angular CLI
 
 Clone the repo
 
-git clone https://github.com/danicaliforrnia/angular-template.git
+`<Mgit clone https://github.com/leodizon17/martrust-app.git>`
 
 Install NPM packages
 
