@@ -1,22 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core';
-// import { Record } from './models/Record';
-// import { AppService } from './app.service';
-import { Observable } from 'rxjs';
-// import { Search } from './models/Search';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ApiService } from './api.service';
+import { Symbol} from './models/Symbol';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  // records: Array<Record>;
-  // fetchedRecords: Array<Record>;
-  // sort = true;
+export class AppComponent {
+  title = 'forex-calc';
 
-  // constructor(private appService: AppService) {}
+  baseCurrency: string = "";
+  symbolCurrency: string = "";
+  amount: number;
+
+  symbols: any[] = [];
+
+  symbolObject: Symbol = {
+    Symbol: '',
+    Id: 0,
+}
+
+  constructor(private _apiService: ApiService) { }
+
+  convertCurrency():void{
+    this._apiService.getConvertion(this.baseCurrency, this.symbolCurrency, this.amount)
+      .subscribe(res => {
+        console.log()
+      });
+  }
 
   ngOnInit(): void {
-   
+    this._apiService.getCurrencies().subscribe(res => {
+      this.symbols = res;
+    });
   }
 }

@@ -1,0 +1,26 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="./../../../assets/images/Small Icon HsM Logo.png" id="icon" alt="User Icon" height="160px" />
+      </div>
+      <h6>Login to Holistic Strategy Management</h6>
+      <!-- Login Form -->
+      <form>
+          <!-- <mat-icon>account_circle</mat-icon> -->
+          <!-- <mat-icon>vpn_key</mat-icon> -->
+        <input type="text" id="login" class="fadeIn second" required="required" name="login" placeholder="login"><br>
+        <input type="password" id="password" class="fadeIn third" required="required" name="password" placeholder="password">
+        <button class="btn btn-primary fadeIn fourth" id="submit" (click)="onSubmit()">Log In</button>
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="underlineHover" href="#">Can't Log in?</a>
+      </div>
+  
+    </div>
+</div>
